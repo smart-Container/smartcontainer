@@ -1,0 +1,203 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+body{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin: 100px;
+}
+.container{
+    max-width: 700px;
+    width:100%;
+    padding:25px 30px ;
+    border-radius: 5px;
+}
+.container .title{
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+}
+.container .title::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+    background:cornflowerblue;
+}
+.container form .sensors-choice{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+}
+form  .sensors-choice .sensor{
+    margin-bottom:15px ;
+    width: calc(100% / 2 - 20px );
+}
+form .container-details .input-box{
+    margin: 20px 0 12px 0;
+}
+.container-details .input-box .details{
+    font-weight: 500;
+    margin-bottom: 5px;
+    display: block;
+}
+.container-details .input-box input{
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #CCC ;
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px ;
+    transition: all 0.3s ease;
+}
+.container-details .input-box input:focus,
+.container-details .input-box input:valid{
+    border-color:rgb(144, 202, 221);
+}
+form .sensors-choice .switch{
+font-size: 16px;
+font: weight 600px;;
+}
+/*switch buttom */
+form .sensor{
+    position: relative;
+    top: 15px;
+}
+
+form .button{
+    height:25px;
+    margin:40px;
+}
+form .button input{
+    height: 100%;
+    width: 100% ;
+    outline: none;
+    color: #fff;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    background: rgb(21,97,156);
+    background: linear-gradient(207deg, rgba(21,97,156,1) 0%, rgba(172,226,209,1) 79%, rgba(151,246,255,1) 93%);
+}
+
+form .button input:hover{
+    background: rgb(21,97,156);
+    background: linear-gradient(-207deg, rgba(21,97,156,1) 0%, rgba(172,226,209,1) 79%, rgba(151,246,255,1) 93%); 
+}
+@media (max-width:584px){
+    .container{
+        max-width: 100%;
+    }
+    form  .sensors-choice .sensor{
+        margin-bottom:15px ;
+        width: 100%;
+    }
+    .container form .container-details{
+     max-height:300px ;
+     overflow-y: scroll;
+    }
+}
+.form-group{
+    margin-top: 6%;
+    margin-left: 2%;
+    padding: 10px;
+    width: 470px;
+    border: 1px solid #ededed;
+   box-shadow: rgb(117, 133, 149);
+}
+textarea{
+    margin: 5px;
+    border: none;
+    outline: none;
+    resize: none;
+}
+.label.lables{
+    font-weight: 600;
+    font-style: 14px;
+    color: lightyellow;
+}
+.textarea-style{
+    margin: 25px;
+    width: auto;
+    height: auto;
+    border: 1px solid #229CFF;
+    border-radius:2px;
+    font-size: 16px;
+}
+.textarea-style:hover{
+    border: 1px solid #229CFF;
+}
+.textarea-style:focus{
+    border: 1px solid #7cbbeef5;
+}
+form .btn{
+    height: 30px;
+    margin: 20px;
+   
+}
+form .btn input{
+    height: 70%;
+    width:40% ;
+    outline: none;
+    color: #fff;
+    border: none;
+    font-size: 18px;
+    font-weight: 400;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    background: rgb(21,97,156);
+    background: linear-gradient(207deg, rgba(21,97,156,1) 0%, rgba(172,226,209,1) 79%, rgba(151,246,255,1) 93%);
+}
+
+form .btn input:hover{
+    background: rgb(21,97,156);
+    background: linear-gradient(-207deg, rgba(21,97,156,1) 0%, rgba(172,226,209,1) 79%, rgba(151,246,255,1) 93%); 
+}
+.destination{
+    display:flex;
+    flex-direction: row;
+}
+.container{
+    margin-left: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container .col{
+    background-color: white;
+    padding: 1rem;
+}
+.form-group{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: none !important;
+
+}
+.textarea-style{
+    margin: 0 !important;
+}
+.sensor{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.sensor .inputs{
+    margin-left: 1rem !important;
+}
+.inputs input{
+    margin: 0 0.2rem;
+}
