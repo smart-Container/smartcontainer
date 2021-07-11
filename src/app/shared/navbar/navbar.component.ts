@@ -1,6 +1,8 @@
 import { Component, OnInit, Renderer2, ViewChild, ElementRef } from '@angular/core';
 import { ROUTES } from '../../sidebar/sidebar.component';
-import { Router } from '@angular/router';
+import { Router, Routes } from '@angular/router';
+import { RouterModule } from '@angular/router';
+
 import { Location} from '@angular/common';
 
 @Component({
@@ -25,6 +27,7 @@ export class NavbarComponent implements OnInit{
         this.sidebarVisible = false;
     }
 
+
     ngOnInit(){
         this.listTitles = ROUTES.filter(listTitle => listTitle);
         var navbar : HTMLElement = this.element.nativeElement;
@@ -35,7 +38,7 @@ export class NavbarComponent implements OnInit{
     }
     getTitle(){
       var titlee = this.location.prepareExternalUrl(this.location.path());
-      if(titlee.charAt(0) === '#'){
+      if(titlee.charAt(0) === '#/dashboard'){
           titlee = titlee.slice( 1 );
       }
       for(var item = 0; item < this.listTitles.length; item++){
@@ -89,6 +92,10 @@ export class NavbarComponent implements OnInit{
           navbar.classList.add('navbar-transparent');
           navbar.classList.remove('bg-white');
         }
+
+      }
+      onClick(){
+        this.router.navigate(['dashboard/profil'])
 
       }
 

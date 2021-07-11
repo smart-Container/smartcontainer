@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
+import {Router, RouterModule} from '@angular/router';
+import { AuthService } from 'app/services/auth.service';
+
+
 
 
 export interface RouteInfo {
@@ -9,11 +14,13 @@ export interface RouteInfo {
 }
 
 export const ROUTES: RouteInfo[] = [
-    { path: '/dashboard',     title: 'overview',         icon:'fa-home',       class: '' },
-    { path: '/containers',         title: 'add container',        icon:'fa-plus-square-o',    class: '' },
-    { path: '/table',          title: 'containers',              icon:'fa-pie-chart',      class: '' },
-    { path: '/agnets',          title: 'agnets',              icon:' fa-users',      class: '' },
-    { path: '/maps',          title: 'Maps',              icon:'fa-map',      class: '' },
+    { path: 'overview',     title: 'overview',         icon:'fa-home',       class: '' },
+    { path: 'containers',         title: 'add container',        icon:'fa-plus-square-o',    class: '' },
+    { path: 'tables',          title: 'containers',              icon:'fa-pie-chart',      class: '' },
+    { path: 'agnets',          title: 'agnets',              icon:' fa-users',      class: '' },
+    { path: 'maps',          title: 'Maps',              icon:'fa-map',      class: '' },
+    
+
 
  
 
@@ -26,8 +33,17 @@ export const ROUTES: RouteInfo[] = [
 })
 
 export class SidebarComponent implements OnInit {
+    @Output() islogout = new EventEmitter<void>()
+    constructor(public fireservice: AuthService, private fAuth: AngularFireAuth , public route:Router){}
+    logingout(){
+        this.fAuth.signOut()
+        this.route.navigate(['/login'])
+
+
+    }
     public menuItems: any[];
-    ngOnInit() {
+    ngOnInit () {
         this.menuItems = ROUTES.filter(menuItem => menuItem);
+        console.log(this.menuItems[1].title)
     }
 }

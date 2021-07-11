@@ -6,8 +6,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
     imports: [ RouterModule, CommonModule, NgbModule ],
-    declarations: [ NavbarComponent ],
+    declarations: [ NavbarComponent],
     exports: [ NavbarComponent ]
+    
 })
+
 
 export class NavbarModule {}
