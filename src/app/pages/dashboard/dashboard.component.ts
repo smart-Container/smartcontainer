@@ -1,12 +1,24 @@
+
+
+
 import { Component, OnInit } from '@angular/core';
 import Chart from 'chart.js';
+import { NavbarComponent } from 'app/shared/navbar/navbar.component';
+import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
+@NgModule({
+  declarations: [ NavbarComponent  ],
+})
 
 @Component({
     selector: 'dashboard-cmp',
     moduleId: module.id,
     templateUrl: 'dashboard.component.html'
 })
+
 
 export class DashboardComponent implements OnInit{
 
@@ -17,6 +29,7 @@ export class DashboardComponent implements OnInit{
   public chartHours;
 
     ngOnInit(){
+      
       this.chartColor = "#FFFFFF";
 
       this.canvas = document.getElementById("chartHours");
